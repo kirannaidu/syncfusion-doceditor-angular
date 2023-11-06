@@ -1,0 +1,29 @@
+<div id="default_title_bar" class="e-de-ctn-title"></div>
+
+<span *ngIf="IsDocx">
+  <ejs-documenteditorcontainer
+    #documenteditor_ref
+    [serviceUrl]="serviceLink"
+    [enableSpellCheck]="true"
+    (created)="onCreate()"
+    (documentChange)="onDocumentChange()"
+    (destroyed)="onDestroy()"
+    style="display: block"
+    height="600"
+  ></ejs-documenteditorcontainer>
+</span>
+
+<span *ngIf="!IsDocx">
+  <div class="control-section">
+    <div class="content-wrapper">
+      <ejs-pdfviewer
+        id="pdfViewer"
+        #pdfeditor_ref
+        [serviceUrl]="Pdfservicelink"
+        [documentPath]="pdfdocument"
+        (documentLoad)="documentLoad($event)"
+        style="height: 640px; display: block"
+      ></ejs-pdfviewer>
+    </div>
+  </div>
+</span>

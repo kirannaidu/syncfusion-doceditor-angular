@@ -1,0 +1,23 @@
+{
+  "/FileUpload": {
+    "target": "http://localhost:5278",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/FileUpload": ""
+    },
+    "logLevel": "debug"
+  }
+}
+
+
+// add this in the angular.json
+
+// "proxyConfig": "proxy.conf.json" in line no. 61
+
+// example 
+/* "serve": {
+    "builder": "@angular-devkit/build-angular:dev-server",
+    "options": {
+      "browserTarget": "doc-editor-app:build"
+    }, */
